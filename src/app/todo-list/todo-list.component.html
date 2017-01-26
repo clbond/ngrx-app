@@ -1,0 +1,8 @@
+<ul>
+  <li [ngClass]="{complete: item.complete}"
+      *ngFor="let item of (list | async); let index = index"
+      (click)="complete.emit(index)">
+    <a href="javascript:void(0)" (click)="onRemove($event, index)">X</a>
+    {{item.description}}
+  </li>
+</ul>
